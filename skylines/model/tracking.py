@@ -70,7 +70,7 @@ class TrackingFix(db.Model):
         value that will be interpreted as hours.
         """
 
-        if isinstance(max_age, (int, long, float)):
+        if isinstance(max_age, int):
             max_age = timedelta(hours=max_age)
 
         return cls.time >= datetime.utcnow() - max_age
